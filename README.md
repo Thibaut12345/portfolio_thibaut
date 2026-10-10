@@ -1,26 +1,45 @@
-# Thibaut Bruyneel — Portfolio
+# Thibaut Bruyneel — portfolio_thibaut
 
-Modern, responsive portfolio made with **plain HTML, CSS and JavaScript**. No framework, no build pipeline, no dependencies.
+This portfolio now uses the design and React/Vite structure from my own `personal_website` reference repository, with **light mode as the default**.
 
-## View locally
-Open `index.html` with VS Code Live Server.
+## Run in VS Code
 
-## Files
-- `index.html` — homepage, all text and portfolio cards
-- `project-pylos.html`, `project-vhdl.html`, `project-iot.html`, `project-bicycle.html` — separate project pages
-- `style.css` — all site styling and design variables
-- `script.js` — optional theme toggle
-- `assets/profile.jpg` — your portrait photo; **you need to add this image manually** if it is not in the repository
+Install Node.js (18+), then from the project root run:
 
-## Photo
-Create a folder named `assets` in the repository and place your photo there as `profile.jpg`. The homepage is already wired to `assets/profile.jpg`. If missing, a clearly marked placeholder appears.
+```bash
+npm ci
+npm run dev
+```
 
-## Editing
-Update your text directly in HTML. The color palette is at the top of `style.css`. To add a new project, copy an existing project page and its linked card in `index.html`. The project illustrations are original HTML/CSS graphics, so they load quickly without third-party services.
+Open the localhost URL shown by Vite. Unlike the older HTML version, this site requires a Vite build to deploy.
 
-**Light mode is always the default when a page opens.** Dark mode can be selected using the moon icon, but is not saved between pages.
+## Edit the website
 
-Replace `hello@example.com` in `index.html` with your real email, and add your own screenshots and results to the project detail pages. The descriptions are starting points to verify and personalize.
+- `src/App.tsx` — pages and navigation
+- `src/index.css` — styles, colors, glass effects and animations
+- `src/data/projects.ts` — projects, images and project details
+- `src/data/blog.ts` — blog articles
+- `src/data/timeline.ts` — CV timeline
+- `src/data/personal.ts` — contact and personal links
+- `public/` — local images you add later
 
-## Publishing
-Push changes to `main`. GitHub Pages can publish this repository from the main branch root; the live deployment typically takes a few minutes.
+The profile image currently loads from the public image in my `personal_website` repository. This avoids the missing-photo problem. Copy it locally to `public/profile.png` and change `photoPath` in `src/App.tsx` if you prefer a standalone setup.
+
+Project hero images are examples; replace them with actual photos/videos when available.
+
+## GitHub Pages — important change
+
+The old site was deployed directly from the `main` branch. **That no longer works with Vite source files.**
+
+1. Open repository **Settings → Pages**.
+2. Under **Build and deployment → Source**, choose **GitHub Actions**.
+3. The committed workflow `.github/workflows/deploy.yml` builds and deploys the site after a push.
+4. Inspect the result in **Actions**; the live site will be `https://thibaut12345.github.io/portfolio_thibaut/`.
+
+The app uses hash-based navigation (`#/projecten`) to work reliably on GitHub Pages. Vite's `base` points to `/portfolio_thibaut/`.
+
+## Notes
+
+The CV page shows the timeline; the PDF download is deliberately not linked until you add a real PDF. The contact form opens the visitor's mail application, rather than pretending an email was sent. Check the factual accuracy of the example project descriptions before publishing.
+
+The previous standalone HTML files have been left in the repository for reference, but React/Vite controls the new homepage.
