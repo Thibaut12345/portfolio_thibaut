@@ -1,35 +1,29 @@
-# Thibaut Bruyneel — Portfolio
+# Portfolio — Thibaut Bruyneel
 
-A simple personal portfolio made with **HTML, CSS and JavaScript**. No frameworks, build tools or dependencies.
+A simple, responsive portfolio with a separate page for each project. Built with **HTML, CSS and plain JavaScript** — no frameworks, build steps or dependencies.
 
-## Run locally
+## Getting started
+Open `index.html` in VS Code and run it with the Live Server extension. Or double-click the HTML file.
 
-Open `index.html` in your browser. That's it!
+## Important: your profile photo
+Place your portrait at `assets/profile.jpg`. The HTML already points to this image. Until you upload it, a clearly marked fallback appears instead. If ChatGPT supplied a `profile.jpg` file, put it in the `assets` folder and commit it with VS Code.
 
-For automatic refreshing while editing, you can use the **Live Server** extension in VS Code.
-
-## Structure
-
-- `index.html` — all text, sections and projects
-- `style.css` — layout, colors, typography and responsive design
-- `script.js` — dark/light mode and current year
+## Files
+- `index.html`: the homepage (introduction, overview, skills, contact)
+- `project-pylos.html`: Pylos AI project
+- `project-vhdl.html`: VHDL processor
+- `project-iot.html`: embedded and IoT
+- `project-bicycle.html`: autonomous bicycle
+- `style.css`: all styling and responsive layout
+- `script.js`: light/dark mode (light is the default)
 
 ## Customize
-
-1. **Email:** replace `hello@example.com` in `index.html` with your actual contact address.
-2. **Projects:** duplicate an `<article class="project-card">` in the Projects section and change its content.
-3. **Colors:** adjust the CSS variables at the top of `style.css`.
-4. **Links:** add your LinkedIn, real project URLs and optionally a CV.
-5. **Images:** later add an `images/` folder and replace the CSS illustrations with your project photos.
-
-This is intentionally a small starting point rather than a complicated application. The project descriptions are examples: check and adjust them before publishing.
+- Change text directly in HTML.
+- Change colors in the `:root` block at the top of `style.css`.
+- Replace the abstract project illustrations with real screenshots later.
+- Replace `hello@example.com` with your email in `index.html`.
+- Project-page text is a suggested starting point; check the details before publishing.
+- To add a project, duplicate a project page and add a matching card to `index.html`.
 
 ## Publish
-
-The easiest way is **GitHub Pages**: in your repository go to **Settings → Pages**, then select **Deploy from a branch**, branch **main** and folder **/(root)**.
-
-GitHub Pages will serve the static site directly from `index.html`.
-
-## Theme
-
-The theme button saves a user's choice in localStorage. Otherwise, the website follows the visitor's light/dark system preference.
+Push files to the `main` branch. If GitHub Pages is enabled for `main` at `/(root)`, GitHub will publish them.
