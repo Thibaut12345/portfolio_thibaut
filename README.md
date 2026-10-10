@@ -1,29 +1,26 @@
-# Portfolio — Thibaut Bruyneel
+# Thibaut Bruyneel — Portfolio
 
-A simple, responsive portfolio with a separate page for each project. Built with **HTML, CSS and plain JavaScript** — no frameworks, build steps or dependencies.
+Modern, responsive portfolio made with **plain HTML, CSS and JavaScript**. No framework, no build pipeline, no dependencies.
 
-## Getting started
-Open `index.html` in VS Code and run it with the Live Server extension. Or double-click the HTML file.
-
-## Important: your profile photo
-Place your portrait at `assets/profile.jpg`. The HTML already points to this image. Until you upload it, a clearly marked fallback appears instead. If ChatGPT supplied a `profile.jpg` file, put it in the `assets` folder and commit it with VS Code.
+## View locally
+Open `index.html` with VS Code Live Server.
 
 ## Files
-- `index.html`: the homepage (introduction, overview, skills, contact)
-- `project-pylos.html`: Pylos AI project
-- `project-vhdl.html`: VHDL processor
-- `project-iot.html`: embedded and IoT
-- `project-bicycle.html`: autonomous bicycle
-- `style.css`: all styling and responsive layout
-- `script.js`: light/dark mode (light is the default)
+- `index.html` — homepage, all text and portfolio cards
+- `project-pylos.html`, `project-vhdl.html`, `project-iot.html`, `project-bicycle.html` — separate project pages
+- `style.css` — all site styling and design variables
+- `script.js` — optional theme toggle
+- `assets/profile.jpg` — your portrait photo; **you need to add this image manually** if it is not in the repository
 
-## Customize
-- Change text directly in HTML.
-- Change colors in the `:root` block at the top of `style.css`.
-- Replace the abstract project illustrations with real screenshots later.
-- Replace `hello@example.com` with your email in `index.html`.
-- Project-page text is a suggested starting point; check the details before publishing.
-- To add a project, duplicate a project page and add a matching card to `index.html`.
+## Photo
+Create a folder named `assets` in the repository and place your photo there as `profile.jpg`. The homepage is already wired to `assets/profile.jpg`. If missing, a clearly marked placeholder appears.
 
-## Publish
-Push files to the `main` branch. If GitHub Pages is enabled for `main` at `/(root)`, GitHub will publish them.
+## Editing
+Update your text directly in HTML. The color palette is at the top of `style.css`. To add a new project, copy an existing project page and its linked card in `index.html`. The project illustrations are original HTML/CSS graphics, so they load quickly without third-party services.
+
+**Light mode is always the default when a page opens.** Dark mode can be selected using the moon icon, but is not saved between pages.
+
+Replace `hello@example.com` in `index.html` with your real email, and add your own screenshots and results to the project detail pages. The descriptions are starting points to verify and personalize.
+
+## Publishing
+Push changes to `main`. GitHub Pages can publish this repository from the main branch root; the live deployment typically takes a few minutes.
