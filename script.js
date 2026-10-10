@@ -1,16 +1,10 @@
-// No frameworks — just a simple optional theme switch.
-const themeButton = document.getElementById("theme");
-const saved = localStorage.getItem("portfolio-theme");
-// Light mode is always the default on first visit.
-function applyTheme(theme) {
-  document.documentElement.dataset.theme = theme;
-  themeButton.textContent = theme === "dark" ? "☀" : "☾";
-  themeButton.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
-}
-applyTheme(saved === "dark" ? "dark" : "light");
-themeButton.addEventListener("click", () => {
-  const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-  applyTheme(next);
-  localStorage.setItem("portfolio-theme", next);
+// Intentionally small: the site defaults to LIGHT on every new page load.
+const toggle = document.querySelector(".theme-toggle");
+const icon = document.querySelector(".theme-symbol");
+toggle?.addEventListener("click", () => {
+  const dark = document.documentElement.dataset.theme !== "dark";
+  document.documentElement.dataset.theme = dark ? "dark" : "light";
+  icon.textContent = dark ? "☀" : "☾";
+  toggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
 });
-document.getElementById("year").textContent = new Date().getFullYear();
+document.querySelectorAll("#year").forEach(el => el.textContent = new Date().getFullYear());
