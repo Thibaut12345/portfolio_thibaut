@@ -7,6 +7,7 @@ import { timelineSections } from '@/data/timeline';
 import { blogPosts } from '@/data/blog';
 
 const photoPath = 'https://raw.githubusercontent.com/Thibaut12345/personal_website/main/public/1.png';
+const cvPath = '#/cv'; // CV overview until a downloadable PDF is added.
 
 type Theme = 'dark' | 'light';
 
