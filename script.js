@@ -1,22 +1,16 @@
-// Small, framework-free interactions. All content lives in index.html.
-const toggle = document.getElementById("theme-toggle");
-const root = document.documentElement;
-const savedTheme = localStorage.getItem("portfolio-theme");
-
-// Use the visitor's system preference until they choose a theme.
-const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-setTheme(savedTheme || (prefersDark ? "dark" : "light"));
-
-function setTheme(theme) {
-  root.dataset.theme = theme;
-  toggle.textContent = theme === "dark" ? "☀" : "☾";
-  toggle.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+// No frameworks — just a simple optional theme switch.
+const themeButton = document.getElementById("theme");
+const saved = localStorage.getItem("portfolio-theme");
+// Light mode is always the default on first visit.
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  themeButton.textContent = theme === "dark" ? "☀" : "☾";
+  themeButton.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
 }
-
-toggle.addEventListener("click", () => {
-  const theme = root.dataset.theme === "dark" ? "light" : "dark";
-  setTheme(theme);
-  localStorage.setItem("portfolio-theme", theme);
+applyTheme(saved === "dark" ? "dark" : "light");
+themeButton.addEventListener("click", () => {
+  const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  applyTheme(next);
+  localStorage.setItem("portfolio-theme", next);
 });
-
 document.getElementById("year").textContent = new Date().getFullYear();
