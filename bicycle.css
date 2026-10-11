@@ -151,3 +151,80 @@
 @media (prefers-reduced-motion: reduce) {
   .bike-background-video { display: none; }
 }
+
+/* Keep the bicycle hero identical in structure to the other case studies. */
+.bike-heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.bike-heading-actions .bike-inline-link {
+  color: var(--ink);
+}
+
+.bike-editorial-photo {
+  isolation: isolate;
+  background: #202926;
+}
+
+.bike-editorial-photo img {
+  filter: saturate(.8);
+}
+
+.bike-photo-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(7, 14, 17, .20), rgba(7, 14, 17, .42));
+  pointer-events: none;
+}
+
+.bike-editorial-photo > span {
+  z-index: 1;
+}
+
+.bike-film {
+  display: grid;
+  grid-template-columns: .65fr 1.35fr;
+  gap: 80px;
+  padding-bottom: 110px;
+}
+
+.bike-film h2 {
+  font-size: clamp(40px, 4vw, 62px);
+  line-height: 1.1;
+  margin: 22px 0;
+}
+
+.bike-film h2 em {
+  color: var(--accent);
+}
+
+.bike-film p {
+  color: var(--gray);
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.bike-film-player {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #171916;
+  overflow: hidden;
+}
+
+.bike-film-player iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+@media (max-width: 850px) {
+  .bike-film {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
