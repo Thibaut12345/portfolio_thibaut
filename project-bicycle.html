@@ -29,33 +29,26 @@
   </header>
 
   <main>
-    <section class="bike-banner" aria-label="Self-driving bicycle project video">
-      <div class="bike-video-backdrop" aria-hidden="true"></div>
-      <iframe
-        class="bike-background-video"
-        src="https://www.youtube-nocookie.com/embed/v913zEsBVsk?autoplay=1&mute=1&controls=0&loop=1&playlist=v913zEsBVsk&playsinline=1&modestbranding=1&rel=0"
-        title="Background footage from the self-driving bicycle project"
-        loading="eager"
-        allow="autoplay; encrypted-media; picture-in-picture"
-        tabindex="-1"
-        aria-hidden="true"></iframe>
-      <div class="bike-banner-shade"></div>
-      <div class="new-container bike-banner-content">
-        <a href="projects.html" class="bike-banner-back">← ALL PROJECTS</a>
-        <div class="bike-banner-bottom">
-          <div>
-            <span class="bike-banner-label">KU LEUVEN / CAMPUS GENT / 2025—2026</span>
-            <h1>Self-driving<br><em>bicycle.</em></h1>
-            <p>Engineering a bicycle that can balance, propel and steer itself.</p>
-            <div class="bike-banner-actions">
-              <a class="bike-btn-light" href="https://github.com/kayensmet/Self-driving-bicycle-2025-2026" target="_blank" rel="noopener noreferrer">EXPLORE THE GITHUB REPO ↗</a>
-              <a class="bike-video-link" href="https://www.youtube.com/watch?v=v913zEsBVsk" target="_blank" rel="noopener noreferrer">WATCH THE FULL VIDEO ↗</a>
-            </div>
-          </div>
-          <div class="bike-banner-counter">CASE STUDY <strong>04 / 04</strong></div>
+    <section class="new-container detail-intro">
+      <a class="back" href="projects.html">← BACK TO PROJECTS</a>
+      <div class="detail-heading">
+        <span class="tiny-number">[ 04 / 004 — ROBOTICS & CONTROL ]</span>
+        <h1>Self-driving Bicycle<em>.</em></h1>
+        <p>Engineering a bicycle that can balance, propel and steer itself.</p>
+        <div class="bike-heading-actions">
+          <a class="new-pill" href="https://github.com/kayensmet/Self-driving-bicycle-2025-2026" target="_blank" rel="noopener noreferrer">VIEW PROJECT ON GITHUB ↗</a>
+          <a class="bike-inline-link" href="https://www.youtube.com/watch?v=v913zEsBVsk" target="_blank" rel="noopener noreferrer">WATCH PROJECT FILM ↗</a>
         </div>
       </div>
     </section>
+
+    <div class="detail-photo bike-editorial-photo">
+      <img src="https://img.youtube.com/vi/v913zEsBVsk/maxresdefault.jpg"
+           onerror="this.src='https://img.youtube.com/vi/v913zEsBVsk/hqdefault.jpg'"
+           alt="Drone view of the bicycle project filmed on KU Leuven's campus">
+      <div class="bike-photo-shade" aria-hidden="true"></div>
+      <span>PROJECT / 04</span>
+    </div>
 
     <section class="new-container bike-overview">
       <div class="bike-section-kicker">[ 001 — THE CHALLENGE ]</div>
@@ -64,6 +57,22 @@
         <p class="bike-large">For our third-year KU Leuven engineering project, our team set out to transform a regular bicycle into a machine that could stay upright, accelerate and steer without a rider.</p>
         <p>Two teams of six students developed separate bicycles and collaborated on the balancing concept. This case study focuses on <strong>Group 2</strong> — Milan, Kayen, Thibaut, Toon, Simon V and Simon VK — while acknowledging the shared work on balance.</p>
         <p>The project was an iterative prototype. By the end, we demonstrated active balancing and remote control, but <strong>not yet full autonomous navigation</strong>: obstacle detection, path planning and coordinated cornering remain future challenges.</p>
+      </div>
+    </section>
+
+    <section class="new-container bike-film">
+      <div>
+        <span class="bike-section-kicker">[ PROJECT FILM ]</span>
+        <h2>See the bike<br><em>in action.</em></h2>
+        <p>Drone footage and the final prototype, filmed by the team. Press play to watch the full project video.</p>
+      </div>
+      <div class="bike-film-player">
+        <iframe src="https://www.youtube-nocookie.com/embed/v913zEsBVsk?rel=0"
+                title="Self-driving bicycle project video"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
       </div>
     </section>
 
