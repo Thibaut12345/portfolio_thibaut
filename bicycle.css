@@ -270,3 +270,64 @@
 @media (prefers-reduced-motion: reduce) {
   .bike-hero-iframe { display: none; }
 }
+
+/* Full-width video banner, with the bicycle kept visible on the right. */
+.bike-banner-refined {
+  height: clamp(600px, 83vh, 790px);
+  min-height: 600px;
+  isolation: isolate;
+}
+.bike-hero-poster, .bike-video-hero, .bike-hero-tint {
+  position: absolute;
+}
+.bike-hero-poster {
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -3;
+}
+.bike-video-hero {
+  top: 50%;
+  left: 50%;
+  width: max(100%, 177.78vh);
+  height: max(100%, 56.25vw);
+  min-height: 100%;
+  border: 0;
+  transform: translate(-50%, -50%) scale(1.03);
+  pointer-events: none;
+  z-index: -2;
+}
+.bike-hero-tint {
+  inset: 0;
+  background: linear-gradient(90deg, rgba(8,15,16,.79) 0%, rgba(8,15,16,.56) 30%, rgba(8,15,16,.16) 72%),
+              linear-gradient(0deg, rgba(8,15,16,.55), transparent 58%);
+  pointer-events: none;
+  z-index: -1;
+}
+.bike-hero-foreground {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 35px 0 58px;
+}
+.bike-back, .bike-kicker { font-size: 11px; letter-spacing: 1.5px; font-weight: 800; }
+.bike-hero-copy { max-width: min(520px, 49vw); }
+.bike-hero-copy h1 {
+  font-size: clamp(57px, 6vw, 99px);
+  line-height: 1.05;
+  letter-spacing: -.08em;
+  margin: 16px 0 20px;
+}
+.bike-hero-copy h1 em { color: #e3a98e; }
+.bike-hero-copy p { font-size: clamp(16px, 1.4vw, 19px); line-height: 1.6; max-width: 425px; }
+.bike-hero-links { display: flex; align-items: center; gap: 22px; margin-top: 24px; flex-wrap: wrap; }
+@media (max-width: 700px) {
+  .bike-hero-copy { max-width: 84vw; }
+  .bike-hero-copy h1 { font-size: clamp(48px, 12vw, 72px); }
+  .bike-hero-tint { background: linear-gradient(90deg, rgba(8,15,16,.80), rgba(8,15,16,.23)),linear-gradient(0deg, rgba(8,15,16,.45), transparent); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bike-video-hero { display: none; }
+}
