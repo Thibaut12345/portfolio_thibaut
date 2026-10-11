@@ -352,3 +352,26 @@
   position: relative;
   z-index: 1;
 }
+
+/* Reliable startup stacking: poster must be visible immediately, not behind
+   the banner's background/negative stacking context. */
+.bike-banner-refined .bike-video-hero {
+  z-index: 0;
+}
+.bike-banner-refined .bike-hero-poster {
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+  background: #172023;
+}
+.bike-banner-refined.bike-video-visible .bike-hero-poster {
+  opacity: 0;
+  pointer-events: none;
+}
+.bike-banner-refined .bike-hero-tint {
+  z-index: 2;
+}
+.bike-banner-refined .bike-hero-foreground {
+  position: relative;
+  z-index: 3;
+}
