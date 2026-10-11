@@ -1,4 +1,4 @@
-// Background video: skip the first 5 seconds and the final 20 seconds.
+// Background video: skip the first 5 seconds and the final 30 seconds.
 // YouTube reports the actual duration, so no hard-coded end time is needed.
 (() => {
   const videoElement = document.getElementById('bike-video-hero');
@@ -7,7 +7,7 @@
   }
 
   const startAt = 5;
-  const skipOutro = 20;
+  const skipOutro = 30;
   let videoPlayer = null;
 
   window.onYouTubeIframeAPIReady = () => {
