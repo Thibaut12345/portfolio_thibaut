@@ -228,3 +228,45 @@
     gap: 25px;
   }
 }
+
+/* Cinematic moving hero within the shared editorial project layout. */
+.bike-moving-hero {
+  position: relative;
+  overflow: hidden;
+  background: #172023;
+}
+.bike-video-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bike-hero-iframe {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: max(100%, 1066.67px);
+  height: max(100%, 56.25vw);
+  min-height: 600px;
+  border: 0;
+  transform: translate(-50%, -50%) scale(1.13);
+  pointer-events: none;
+}
+.bike-moving-hero .bike-photo-shade {
+  z-index: 1;
+  background: rgba(5, 13, 15, .38);
+}
+.bike-moving-hero > span {
+  z-index: 2;
+}
+@media (max-width: 640px) {
+  .bike-hero-iframe {
+    min-width: 1100px;
+    min-height: 620px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bike-hero-iframe { display: none; }
+}
