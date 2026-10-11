@@ -1,24 +1,23 @@
-# Thibaut Bruyneel — personal portfolio
+# Thibaut Bruyneel — Editorial Portfolio
 
-A simple multi-page portfolio with a premium light glassmorphism style inspired by `personal_website`, without React or a build setup.
+An editorial-style portfolio using **plain HTML, CSS and a little JavaScript**.
 
-## Run locally
-Open `index.html` directly, or use the **Live Server** extension in VS Code. No npm or Node.js is needed.
+## Open in VS Code
+1. Open the `portfolio_thibaut` folder in VS Code.
+2. Pull the newest code: `git pull origin main`.
+3. Open `index.html` with the **Live Server** extension.
 
-## Important files
+There is no `npm install` or `npm run dev`.
+
+## Customize
 - `index.html` — homepage
 - `projects.html` — project overview
-- `project-pylos.html`, `project-vhdl.html`, `project-iot.html`, `project-bicycle.html` — project stories with image headers
-- `about.html`, `skills.html`, `contact.html` — separate pages
-- `style.css` — all colors, layout, glass effects and responsive styling
-- `script.js` — optional dark-mode toggle
+- `project-*.html` — separate project detail pages
+- `about.html`, `skills.html`, `contact.html` — additional pages
+- `style.css` — complete visual design
+- `script.js` — tiny current-year helper
 
-**Light mode is always the default.**
+The homepage currently loads your portrait from the public `personal_website` repository. Example project photos are loaded from Unsplash and should be replaced with authentic media as you develop the site.
 
-The homepage photo currently loads from the public image in the `personal_website` repository, so you don't have to upload it again. Project photos are illustrative placeholders and may be replaced with real media later. Some project descriptions are examples: update them to match your work.
-
-## Deploy
-The GitHub Actions workflow at `.github/workflows/deploy.yml` deploys the static files directly. In Settings → Pages, set **Source = GitHub Actions**. No npm commands are required.
-
-## Update
-After changing the HTML or CSS, use `git add .`, `git commit -m "Update portfolio"`, and `git push`.
+## Publish
+The GitHub Actions workflow deploys the static site. In repository Settings → Pages choose **GitHub Actions** as the source.
