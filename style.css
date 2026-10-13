@@ -918,55 +918,17 @@ h1 em,h2 em {
   .interior-title { padding-top: 42px; padding-bottom: 28px; }
   .interior-title h1 { font-size: clamp(55px, 12vw, 85px); }
 }
-
-
-/* Quiet glassmorphism atmosphere behind interior headings. */
-.interior-title { position: relative; isolation: isolate; }
+/* Soft ambient warmth: no outlined shapes, circles, or visible blob edges. */
+.interior-title {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse 52% 90% at 88% 48%, rgba(186, 79, 44, .075) 0%, rgba(186, 79, 44, .028) 42%, rgba(186, 79, 44, 0) 75%);
+}
 .interior-title::before,
-.interior-title::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
-  filter: blur(58px);
-}
-.interior-title::before {
-  width: clamp(230px, 30vw, 425px);
-  aspect-ratio: 1;
-  right: 7%;
-  top: 10%;
-  background: rgba(186, 79, 44, .17);
-}
-.interior-title::after {
-  width: clamp(180px, 19vw, 275px);
-  aspect-ratio: 1;
-  right: 21%;
-  top: 37%;
-  background: rgba(97, 89, 78, .075);
-}
-.interior-title--about::before { right: 11%; top: 8%; }
-.interior-title--projects::before { right: 4%; top: 12%; }
-.interior-title--skills::before { right: 12%; top: 13%; }
-.interior-title--cv::before { right: 8%; top: 8%; }
-.interior-title--contact::before { right: 5%; top: 7%; }
-.interior-title .hero-glass-shape {
-  position: absolute;
-  width: clamp(190px, 22vw, 300px);
-  aspect-ratio: 1;
-  top: 16%;
-  right: 11%;
-  border-radius: 45% 55% 56% 44%;
-  background: rgba(255, 255, 255, .14);
-  border: 1px solid rgba(255, 255, 255, .45);
-  box-shadow: 0 18px 55px rgba(30, 25, 22, .035), inset 0 1px rgba(255,255,255,.4);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  pointer-events: none;
-  z-index: -1;
-}
-@media (max-width: 850px) {
-  .interior-title::before { right: -8%; opacity: .65; }
-  .interior-title::after { right: 4%; opacity: .6; }
-  .interior-title .hero-glass-shape { right: -4%; opacity: .55; }
+.interior-title::after { content: none; }
+@media (max-width: 700px) {
+  .interior-title {
+    background: radial-gradient(ellipse 70% 65% at 100% 45%, rgba(186, 79, 44, .045), transparent 75%);
+  }
 }
