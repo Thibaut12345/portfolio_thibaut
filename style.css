@@ -834,3 +834,60 @@ h1 em,h2 em {
   .editorial-rule { font-size: 8px; }
   .portrait-enhanced { min-height: 350px; }
 }
+
+
+/* Editorial hero: purposeful composition rather than decorative filler. */
+.interior-title {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(250px, .65fr);
+  align-items: end;
+  column-gap: clamp(30px, 6vw, 110px);
+  padding-top: clamp(65px, 8vw, 120px);
+  padding-bottom: clamp(50px, 7vw, 100px);
+  min-height: 0;
+}
+.interior-title::after { content: none; }
+.interior-title > .tiny-number { grid-column: 1 / -1; margin-bottom: 28px; }
+.interior-title h1 {
+  grid-column: 1;
+  margin: 0;
+  font-size: clamp(72px, 8vw, 135px);
+  line-height: 1.04;
+}
+.intro-aside {
+  grid-column: 2;
+  align-self: end;
+  padding: 0 0 10px 27px;
+  border-left: 2px solid var(--accent);
+}
+.intro-aside p {
+  font-size: clamp(16px, 1.45vw, 20px);
+  line-height: 1.7;
+  color: #52544e;
+  max-width: 350px;
+  margin: 0 0 22px;
+}
+.interior-note-link {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 6px;
+  color: var(--accent);
+}
+.interior-title > p,
+.interior-title > .new-pill {
+  grid-column: 2;
+}
+.interior-title > p {
+  display: none;
+}
+.cv-intro .new-pill { justify-self: start; margin-top: 22px; }
+.about-page-grid { padding-top: 0; }
+@media (max-width: 850px) {
+  .interior-title { grid-template-columns: 1fr; gap: 25px; }
+  .interior-title h1 { grid-column: 1; font-size: clamp(62px, 11vw, 105px); }
+  .intro-aside { grid-column: 1; max-width: 470px; }
+  .interior-title > .new-pill { grid-column: 1; }
+}
