@@ -753,3 +753,84 @@ h1 em,h2 em {
     letter-spacing: -1.5px;
   }
 }
+
+
+/* Editorial opening refinements: improve first-screen composition while
+   preserving the established cream, black and terracotta visual language. */
+.interior-title {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 58px;
+  min-height: 0;
+}
+.interior-title h1 {
+  position: relative;
+  z-index: 1;
+  margin-top: 35px;
+  margin-bottom: 30px;
+}
+.interior-title::after {
+  content: "TB / 26";
+  position: absolute;
+  top: 130px;
+  right: 3%;
+  font: 800 clamp(46px, 8vw, 140px) Manrope, sans-serif;
+  letter-spacing: -.09em;
+  color: rgba(186, 79, 44, .085);
+  pointer-events: none;
+}
+.editorial-index {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 18px;
+  margin-bottom: 38px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--gray);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+.editorial-rule {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid var(--rule);
+  padding-top: 16px;
+  margin-top: 20px;
+  color: var(--gray);
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  font-weight: 700;
+}
+.about-page-grid {
+  padding-top: 28px;
+}
+.portrait-enhanced {
+  position: relative;
+  background: #dedbd2;
+  min-height: 500px;
+}
+.portrait-enhanced::after {
+  content: "01 / PORTRAIT";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--bg);
+  padding: 12px 18px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+.portrait-enhanced img {
+  object-position: 50% 32%;
+}
+@media (max-width: 700px) {
+  .interior-title { padding-top: 45px; padding-bottom: 42px; }
+  .interior-title::after { top: 90px; right: 0; font-size: 55px; }
+  .editorial-index { font-size: 8px; margin-bottom: 22px; }
+  .editorial-index span { display: none; }
+  .editorial-rule { font-size: 8px; }
+  .portrait-enhanced { min-height: 350px; }
+}
