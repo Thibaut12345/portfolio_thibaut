@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="bicycle.css">
   <script defer src="script.js"></script>
+  <script defer src="bicycle-experience.js"></script>
   <script defer src="bicycle-video.js"></script>
 </head>
 <body>
@@ -88,6 +89,47 @@
       <div><span>MAIN CONTROLLER</span><strong>ESP32 · ESP-NOW</strong></div>
       <div><span>BALANCING RESULT</span><strong>About ±1° from target</strong></div>
     </div>
+
+    <!-- Interactive system explorer: each layer is grounded in the team documentation. -->
+    <section class="new-container bike-explorer" aria-labelledby="bike-explorer-title">
+      <div class="bike-explorer-heading">
+        <div>
+          <span class="bike-section-kicker">[ SYSTEM EXPLORER / 001 ]</span>
+          <h2 id="bike-explorer-title">One bicycle.<br><em>Four systems.</em></h2>
+        </div>
+        <p>Explore how sensing, control and electronics come together. Select a subsystem to see what it does and how we built it.</p>
+      </div>
+      <div class="bike-explorer-frame">
+        <div class="bike-explorer-visual">
+          <div class="bike-explorer-visual-top"><span>IB3 / 2025—2026</span><span>ARCHITECTURE OVERVIEW</span></div>
+          <div class="bike-node-map" aria-label="System architecture schematic">
+            <div class="bike-system-node" data-system-node="control"><span>01</span><strong>ESP32<br>CONTROLLER</strong><small>ESP-NOW</small></div>
+            <div class="bike-system-flow"><span>WIRELESS COMMANDS</span><b>↓</b></div>
+            <div class="bike-system-split">
+              <div class="bike-system-node is-selected" data-system-node="balance"><span>02</span><strong>BALANCE</strong><small>MPU6050 · LQR</small></div>
+              <div class="bike-system-node" data-system-node="steering"><span>03</span><strong>STEERING</strong><small>DS5160 · CHAIN</small></div>
+              <div class="bike-system-node" data-system-node="drive"><span>04</span><strong>DRIVE</strong><small>PHASERUNNER V2</small></div>
+            </div>
+          </div>
+          <span class="bike-explorer-corner">ENGINEERING NOTES ↗</span>
+        </div>
+        <div class="bike-explorer-information">
+          <div class="bike-explorer-tabs" role="group" aria-label="Choose a bicycle subsystem">
+            <button type="button" class="is-active" data-system="balance" aria-pressed="true">BALANCE</button>
+            <button type="button" data-system="steering" aria-pressed="false">STEERING</button>
+            <button type="button" data-system="drive" aria-pressed="false">DRIVE</button>
+            <button type="button" data-system="control" aria-pressed="false">CONTROL</button>
+          </div>
+          <div class="bike-explorer-copy" aria-live="polite">
+            <span id="bike-system-count">01 / 04 — FEEDBACK CONTROL</span>
+            <h3 id="bike-system-title">Staying upright.</h3>
+            <p id="bike-system-description">An MPU6050 measures lean and angular velocity. The LQR controller adjusts two drone motors to correct the tilt, holding the bike within about ±1° of the target in documented tests.</p>
+            <div class="bike-explorer-tags" id="bike-system-tags"><span>MPU6050</span><span>LQR</span><span>BLDC MOTORS</span></div>
+          </div>
+          <div class="bike-explorer-bottom"><span>SELECT A SYSTEM ABOVE</span><span>KU LEUVEN / GHENT</span></div>
+        </div>
+      </div>
+    </section>
 
     <section class="bike-dark-feature">
       <div class="new-container bike-feature-grid">
